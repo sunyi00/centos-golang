@@ -5,7 +5,8 @@ RUN yum -y install unzip \
 
 RUN cd tmp \
     && curl -OL https://storage.googleapis.com/golang/go1.5.2.linux-amd64.tar.gz \
-    && tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz \
+    && tar -C /usr/local -xzf go1.5.2.linux-amd64.tar.gz \
+    && rm -rf go1.5.2.linux-amd64.tar.gz \
     && echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
 
 ENV PATH=$PATH:/usr/local/go/bin
